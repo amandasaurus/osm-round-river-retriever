@@ -38,7 +38,7 @@ echo "
 if [ "${1:- }" = "-h" ] ; then
 
 	cat <<-HELP
-	$(basename $0) path/to/FILENAME.osm.pbf [OUTPUT_DIRECTORY]
+	$(basename "$0") path/to/FILENAME.osm.pbf [OUTPUT_DIRECTORY]
 	Puts data into FILENAME.results.csv (& .pp0.01.csv etc)
 	The user you're running this as needs to have password access to postgresql
 	(which is the default)
@@ -88,7 +88,7 @@ if [ "${PREFIX}.natural-water.osm.pbf" -nt ".${PREFIX}.imported" ] ; then
 	echo "Importing into PostgreSQL"
 
 	# Load into postgresql. -C is for node cache. IME 4000 is fine for a planet file.
-	osm2pgsql -C 4000 -p rivers_${PREFIX} -l --hstore-all "${PREFIX}.natural-water.osm.pbf"
+	osm2pgsql -C 4000 -p "rivers_${PREFIX}" -l --hstore-all "${PREFIX}.natural-water.osm.pbf"
 
 	# We don't need these tables, so delete them to save space
 	for T in point line roads ; do
@@ -102,7 +102,7 @@ fi
 
 
 # use .planet.imported as a temp file to say "yep, we have added this to postgresql"
-if [ ".${PREFIX}.imported" -nt ".${PREFIX}.data-calculated" ] || [ $0 -nt ".${PREFIX}.data-calculated" ] ; then
+if [ ".${PREFIX}.imported" -nt ".${PREFIX}.data-calculated" ] || [ "$0" -nt ".${PREFIX}.data-calculated" ] ; then
 
 	echo "Performing the data calculation into water_shapes_${PREFIX}..."
 	psql -c "DROP TABLE IF EXISTS water_shapes_${PREFIX};"
