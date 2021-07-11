@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Round River Retriever - Generate a CSV file
+# Copyright 2021 Affero GPL v3+
 
 # Changes
 
