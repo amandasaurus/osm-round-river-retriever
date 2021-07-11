@@ -4,7 +4,7 @@ Find, in an OpenStreetMap data file, anything with `natural=water` that should p
 
 ## Motivation
 
-There are some river areas in OpenStreetMap which are just tagged `natural=water`, without the correct `water=river` tag. This script adds a `.osm.pbf` to PostgresSQL with [`osm2pgsql`](https://osm2pgsql.org/) and runs some SQL processing to produce a CSV file with points and some metrics which help you find these long skinny `natural=water` objects.
+There are some river areas in OpenStreetMap which are just tagged `natural=water`, without the correct `water=river` tag. This script adds a `.osm.pbf` to PostgresSQL with [`osm2pgsql`](https://osm2pgsql.org/) and runs some SQL processing to produce a CSV file with points and some metrics which help you find these long skinny `natural=water` objects. This is useful as part of the [OSM River Modernization Project](https://wiki.openstreetmap.org/wiki/WikiProject_Waterways/River_modernization).
 
 ## Usage
 
