@@ -1,4 +1,4 @@
-# RRR - Round River Retreiver
+# RRR - Round River Retriever
 
 Find, in an OpenStreetMap data file, anything with `natural=water` that should probably have `water=river` tag
 
