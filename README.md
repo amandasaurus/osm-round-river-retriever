@@ -2,6 +2,10 @@
 
 Find, in an OpenStreetMap data file, anything with `natural=water` that should probably have `water=river` tag
 
+## Motivation
+
+There are some river areas in OpenStreetMap which are just tagged `natural=water`, without the correct `water=river` tag. This script adds a `.osm.pbf` to PostgresSQL with [`osm2pgsql`](https://osm2pgsql.org/) and runs some SQL processing to produce a CSV file with points and some metrics which help you find these long skinny `natural=water` objects.
+
 ## Usage
 
 ```bash
@@ -32,6 +36,10 @@ For every OSM object with `natural=water` tag, there's one row in the CSV file(s
 * **`boundary_len_m`**: Length of the boundary in metres
 * **`reock_test`**: Value of the [Reock degree of compactness](https://en.wikipedia.org/wiki/Reock_degree_of_compactness)
 * **`pp_test`**: Value of the [Polsby–Popper test](https://en.wikipedia.org/wiki/Polsby%E2%80%93Popper_test)
+
+## Changelog
+
+* 2021-07-11: Published on GitHub
 
 
 ## Copyright & Licence

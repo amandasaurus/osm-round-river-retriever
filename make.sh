@@ -203,8 +203,8 @@ if [ ".${PREFIX}.imported" -nt ".${PREFIX}.data-calculated" ] || [ "$0" -nt ".${
 			-- length of the boundary in metres
 			st_length(st_exteriorring(way)::geography) as boundary_len_m,
 
-			-- area/radius of this circle. This is a Roeck (or Reocke test)
-			area_deg2/mbc_radius_deg as roeck_test,
+			-- area/radius of this circle. This is a Reock degree of compactness
+			area_deg2/mbc_radius_deg as reock_test,
 
 			-- https://en.wikipedia.org/wiki/Polsby%E2%80%93Popper_test
 			4*pi()*area_deg2/(boundary_len_deg*boundary_len_deg) as pp_test
