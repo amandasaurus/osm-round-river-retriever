@@ -1,0 +1,7 @@
+*.csv
+*.osm.pbf
+*.results*.zip
+*.results.csv.gz
+.*.data-calculated
+.*.imported
+tmp.*
